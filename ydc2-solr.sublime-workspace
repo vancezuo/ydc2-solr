@@ -1,0 +1,161 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/index.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-autocomplete.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-result.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-tagcloud.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-solr.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-autocomplete.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-search.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-txt.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/css/ydc2.css",
+		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/ajax-solr/examples/reuters/css/reuters.css",
+		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-doc.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/ajax-solr/core/Core.js",
+		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2",
+		"/C/Users/Vance Zuo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Vance Zuo/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Vance Zuo/Dropbox/Solr/ydc2-solr.sublime-project",
+		"/C/Users/Vance Zuo/GitHub/2048/js/keyboard_input_manager.js",
+		"/C/Program Files (x86)/2K Games/Firaxis Games/Sid Meier's Civilization 4 Gold/Beyond the Sword/Mods/RFC Dawn of Civilization/Assets/Python/Consts.py",
+		"/C/Users/Vance Zuo/GitHub/2048/index.html",
+		"/C/Users/Vance Zuo/GitHub/2048/README.md",
+		"/C/Users/Vance Zuo/AppData/Roaming/Sublime Text 2/Packages/User/Distraction Free.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ju",
+			"justi",
+			"manager",
+			"Manager",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Manager",
+			"manager"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true
+}
