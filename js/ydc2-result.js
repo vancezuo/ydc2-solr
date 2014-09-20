@@ -59,12 +59,26 @@
       output += '<div>'
       output += '<h2>' + doc.title + '</h2>';
       output += '<p>By ' + doc.author + '</p>';      
+      output += '<p>' + this.makeResource(doc) + '</p>';
+      output += '<p>See more at ' + this.makeURL(doc, doc.url) + '</p>';
       output += '</p>'
       output += '</div>';
       return output;
     },
 
+    makeURL: function (doc, display) {
+      return '<a href="' + doc.url + '">'+ display + '</a>';
+    },
 
+    makeResource: function(doc) {
+      if (doc.resource !== "Resource available online")
+        return '';
+      var output = '';
+      for (var i = 0; i < doc.resourceURL.length; i++) {
+        output += '<img src="' + doc.resourceURL[i] + '">';
+      }
+      return output;
+    }
   });
 
 })(jQuery);
