@@ -123,21 +123,21 @@
 
                 promises = [];
                 validImages = [];
-                var addImage = function (docs, i) {
-                    var request = $.ajax({
-                        url: docs[i].resourceURL[0],
-                        type: 'HEAD',
-                        //async: false,
-                        complete: function (req) {
-                            if (req.status == 200) 
-                                validImages.push(docs[i]);
-                        }
-                    });
-                    promises.push(request);
-                }
-                for(var i = 0; i < docs.length; i++){    
-                    addImage(docs, i);
-                }               
+                // var addImage = function (docs, i) {
+                //     var request = $.ajax({
+                //         url: docs[i].resourceURL[0],
+                //         type: 'HEAD',
+                //         //async: false,
+                //         complete: function (req) {
+                //             if (req.status == 200) 
+                //                 validImages.push(docs[i]);
+                //         }
+                //     });
+                //     promises.push(request);
+                // }
+                // for(var i = 0; i < docs.length; i++){    
+                //     addImage(docs, i);
+                // }               
 
                 $.when.apply(null, promises).always(function () {
                     var validNum = docs.length; // validImages.length;
@@ -183,37 +183,37 @@
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 500px;
             overflow: hidden;">
             <div>
-                <a u=image href="#"><img id="0" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="0" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="1" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="1" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="2" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="2" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="3" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="3" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="4" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="4" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="5" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="5" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="6" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="6" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="7" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="7" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="8" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="8" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="9" src="images/back.jpg" /></a>
+                <a u=image href="#"><img id="9" src="" /></a>
             </div>
             <div>
-                <a u=image href="#"><img id="10" src="images/back.jpg"/></a>
+                <a u=image href="#"><img id="10" src=""/></a>
             </div>
         </div>
 
