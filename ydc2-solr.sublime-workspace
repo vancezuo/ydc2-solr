@@ -3,10 +3,62 @@
 	{
 		"selected_items":
 		[
+			[
+				"imag",
+				"imageOnly"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 2253,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/ydc2.css",
+			"settings":
+			{
+				"buffer_size": 2292,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/jssor.css",
+			"settings":
+			{
+				"buffer_size": 1819,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/ydc2-search.js",
+			"settings":
+			{
+				"buffer_size": 10785,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/ydc2-slider.js",
+			"settings":
+			{
+				"buffer_size": 13303,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/ydc2-grid.js",
+			"settings":
+			{
+				"buffer_size": 10893,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -32,11 +84,44 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Vance Zuo/GitHub/ydc2-solr/index.html",
-		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-autocomplete.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/photo-slider.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/grid-slider.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/new/search.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/new/js/ydc2-search.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/new/index.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/new/css/style.css",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/css/ydc2.css",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/search.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/html5up-strongly-typed/left-sidebar - Copy.html",
 		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-result.js",
-		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-tagcloud.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/index.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/jssor/examples-jquery/slider-with-caption.source.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-search.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/css/search.css",
+		"/C/Users/Vance Zuo/Downloads/html5up-strongly-typed/css/style.css",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/jssor/demos-jquery/different-size-photo-slider.source.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/test.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/ajax-solr/managers/Manager.jquery.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/jssor/examples-jquery/simple-slider.source.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/jssor/demos-no-jquery/content-slider.source.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/jssor/demos-jquery/content-slider.source.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/gallery.html",
 		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-solr.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/css/ydc2-gallery.css",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/galleria/galleria-1.4.2.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/galleria/plugins/history/galleria.history.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/galleria/LICENSE",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-gallery.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/demo.html",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-index.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/responsive-gallery-grid/js/main.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-gallery-result.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/responsive-gallery-grid/gallerygrid.php",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/responsive-gallery-grid/js/jquery.imagesloaded.min.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/responsive-gallery-grid/js/jquery.gallerygrid.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-autocomplete.js",
+		"/C/Users/Vance Zuo/GitHub/ydc2-solr/js/ydc2-tagcloud.js",
 		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-autocomplete.js",
 		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-search.js",
 		"/C/Users/Vance Zuo/Dropbox/Solr/js/ydc2-txt.js",
@@ -71,6 +156,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"vox",
+			"a ",
+			"line",
+			"div",
+			"  AjaxSolr.CurrentSearchWidget = AjaxSolr.AbstractWidget.extend({\n    start: 0,\n\n    afterRequest: function () {\n      var self = this;\n      var links = [];\n\n      var q = this.manager.store.get('q').val();\n      if (q != '*:*') {\n        links.push($('<a href=\"#\"></a>').text('(x) ' + q).click(function () {\n          self.manager.store.get('q').val('*:*');\n          self.doRequest();\n          return false;\n        }));\n      }\n\n      var fq = this.manager.store.values('fq');\n      for (var i = 0, l = fq.length; i < l; i++) {\n        links.push($('<a href=\"#\"></a>').text('(x) ' + fq[i]).click(self.removeFacet(fq[i])));\n      }\n\n      if (links.length > 1) {\n        links.unshift($('<a href=\"#\"></a>').text('remove all').click(function () {\n          self.manager.store.get('q').val('*:*');\n          self.manager.store.remove('fq');\n          self.doRequest();\n          return false;\n        }));\n      }\n\n      if (links.length) {\n        var $target = $(this.target);\n        $target.empty();\n        for (var i = 0, l = links.length; i < l; i++) {\n          $target.append($('<li></li>').append(links[i]));\n        }\n      }\n      else {\n        $(this.target).html('<li>Viewing all documents.</li>');\n      }\n    },\n\n    removeFacet: function (facet) {\n      var self = this;\n      return function () {\n        if (self.manager.store.removeByValue('fq', facet)) {\n          self.doRequest();\n        }\n        return false;\n      };\n    }\n  });",
+			"img/",
+			"images/back.jpg",
+			"manager",
+			"')).",
+			" ));",
+			"; ",
+			">\n",
 			"ju",
 			"justi",
 			"manager",
@@ -78,11 +175,13 @@
 			">\n"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"ul",
+			"",
 			"Manager",
 			"manager"
 		],
@@ -95,8 +194,177 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 2253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1030,
+								2236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 616.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/ydc2.css",
+					"settings":
+					{
+						"buffer_size": 2292,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2292,
+								2292
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2110.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/jssor.css",
+					"settings":
+					{
+						"buffer_size": 1819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								837,
+								837
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/ydc2-search.js",
+					"settings":
+					{
+						"buffer_size": 10785,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/ydc2-slider.js",
+					"settings":
+					{
+						"buffer_size": 13303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/ydc2-grid.js",
+					"settings":
+					{
+						"buffer_size": 10893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								649,
+								649
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -156,6 +424,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 235.0,
+	"side_bar_width": 236.0,
 	"status_bar_visible": true
 }

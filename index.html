@@ -16,17 +16,13 @@
   <script src="ajax-solr/widgets/jquery/PagerWidget.js"></script>
   <script src="ajax-solr/core/AbstractFacetWidget.js"></script>
   <script src="ajax-solr/core/AbstractTextWidget.js"></script>
-  <script src="js/ydc2-solr.js"></script>
-  <script src="js/ydc2-result.js"></script>
-  <script src="js/ydc2-tagcloud.js"></script>
   <script src="js/ydc2-search.js"></script>
-  <script src="js/ydc2-autocomplete.js"></script>
 </head>
 <body>
   <div id="wrap">
     <div id="header">
-      <h1>AJAX Solr Demonstration</h1>
-      <h2>Browse YDC2 metadata</h2>
+      <h1>YDC2 - AJAX Solr Demos</h1>
+      <h2>YDC2 metadata search</h2>
     </div>
 
     <div class="right">
@@ -49,25 +45,24 @@
         <input type="text" id="query" name="query" autocomplete="off">
       </ul>
 
-      <h2>Top Institutions</h2>
+      <h2>Institutions</h2>
       <div class="tagcloud" id="institution_facet"></div>
 
-      <h2>Top Collections</h2>
+      <h2>Collections</h2>
       <div class="tagcloud" id="collection_facet"></div>
 
-      <h2>Top Authors</h2>
-      <div class="tagcloud" id="auth_author_facet"></div>
+      <h2>Authors</h2>
+      <div class="tagcloud" id="auth_author_facet"></div>      
 
-      <h2>By Resource Availability</h2>
+      <h2>Types</h2>
+      <div class="tagcloud" id="type_facet"></div>
+
+      <h2>Eras</h2>
+      <div class="tagcloud" id="era_facet"></div>
+
+      <h2>Resource Availability</h2>
       <div class="tagcloud" id="resource_facet"></div>
-      <!--
-      <h2>By Country</h2>
-      <div id="countries"></div>
-      <div id="preview"></div>
 
-      <h2>By Date</h2>
-      <div id="calendar"></div>
-      -->
       <div class="clear"></div>
     </div>
     <div class="clear"></div>
