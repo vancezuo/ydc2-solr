@@ -1,3 +1,4 @@
+<!-- Based on AJAX Solr (https://github.com/evolvingweb/ajax-solr) tutorial -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +45,12 @@
       <ul id="search">
         <input type="text" id="query" name="query" autocomplete="off">
       </ul>
+      
+      <h2>Repository Code</h2>
+      <div class="tagcloud" id="cds_repository_code"></div>
+      
+      <h2>Resource Availability</h2>
+      <div class="tagcloud" id="resource_facet"></div>
 
       <h2>Institutions</h2>
       <div class="tagcloud" id="institution_facet"></div>
@@ -59,9 +66,6 @@
 
       <h2>Eras</h2>
       <div class="tagcloud" id="era_facet"></div>
-
-      <h2>Resource Availability</h2>
-      <div class="tagcloud" id="resource_facet"></div>
 
       <div class="clear"></div>
     </div>

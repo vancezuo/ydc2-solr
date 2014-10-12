@@ -69,7 +69,7 @@ var Manager;
         output += '<div>'
         output += '<h2>' + doc.title + '</h2>';
         output += '<p>By ' + doc.author + '.</p>';      
-        output += '<p>' + this.makeResource(doc) + '</p>';
+        output += '<p>' + this.makeCDSImage(doc) + '</p>';
         output += '<p>From '+ doc.collection +' collection at the '+ doc.institution +'.</p>';
         output += '<p>See more at ' + this.makeURL(doc, doc.url) + '.</p>';
         output += '</p>'
@@ -80,7 +80,30 @@ var Manager;
       makeURL: function (doc, display) {
         return '<a href="' + doc.url + '">'+ display + '</a>';
       },
-
+      
+      makeCDSImage: function(doc) {
+        if (doc.cds_repository_code === undefined || doc.cds_repository_id === undefined)
+          return this.makeResource(doc);
+        output = '';
+        cdsPrefix = 'http://deliver.odai.yale.edu/info/'
+            + doc.cds_repository_code +'/object/'+ doc.cds_repository_id +'/type/';
+        ydc2Prefix = 'http://scale.ydc2.yale.edu/iiif/';
+        ydc2Suffix = '/full/full/0/native.jpg';
+        for (var i = 0; i < 4; i++) {
+          cdsURL = cdsPrefix + i;
+          $.getJSON(cdsURL, function(data) {
+            for (e in data) {
+              id = e['contentId'];
+              ydc2URL = ydc2Prefix + id + ydc2Suffix;
+              output += '<img src="' + ydc2URL + '">';
+            }
+          });
+        }
+        if (output == '')
+          return this.makeResource(doc);
+        return output;
+      },
+      
       makeResource: function(doc) {
         if (doc.resource !== "Resource available online")
           return '';
@@ -276,7 +299,7 @@ var Manager;
     }));
 
     var fields = ['institution_facet', 'collection_facet', 'auth_author_facet', 
-        'type_facet', 'era_facet', 'resource_facet'];
+        'type_facet', 'era_facet', 'resource_facet', 'cds_repository_code'];
     
     for (var i = 0, l = fields.length; i < l; i++) {
       Manager.addWidget(new AjaxSolr.TagcloudWidget({
@@ -298,9 +321,9 @@ var Manager;
     }));
 
     Manager.init();
-    Manager.store.addByValue('q', '*:*'); // query everything
 
     var params = {
+      'q': '*:*',
       facet: true,
       'facet.field': fields,
       'facet.limit': 20,

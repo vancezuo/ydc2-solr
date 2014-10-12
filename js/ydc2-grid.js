@@ -18,7 +18,7 @@ var jssor_slider1;
 /******************************************************************************
  * Demo jssor grid slider
  ******************************************************************************/
-var initSlider = function() {
+ var initSlider = function() {
   var nestedSliders = [];
 
   $.each(["sliderh1_container", "sliderh2_container", "sliderh3_container", "sliderh4_container"], function (index, value) {
@@ -49,7 +49,7 @@ var initSlider = function() {
       var jssor_sliderh = new $JssorSlider$(value, sliderhOptions);
 
       nestedSliders.push(jssor_sliderh);
-});   
+    });   
 
 var options = {
   $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
@@ -111,22 +111,52 @@ function ScaleSlider() {
 /******************************************************************************
  * AJAX-Solr code
  ******************************************************************************/
-jQuery(document).ready(function ($) {
+ jQuery(document).ready(function ($) {
 
   AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
     afterRequest: function () {
       var docs = this.manager.response.response.docs;
-
+      
+      // Image verification
       promises = [];
       validImages = [];
+
+      var getURL = function(doc) {
+        if (doc.cds_repository_code === undefined 
+            || doc.cds_repository_id === undefined)
+          return doc.resourceURL[0];
+        output = '';
+        cdsPrefix = 'http://deliver.odai.yale.edu/info/'
+            + doc.cds_repository_code +'/object/'+ doc.cds_repository_id +'/type/';
+        ydc2Prefix = 'http://scale.ydc2.yale.edu/iiif/';
+        ydc2Suffix = '/full/full/0/native.jpg';
+        for (var i = 0; i < 4; i++) {
+          cdsURL = cdsPrefix + i;
+          $.getJSON(cdsURL, function(data) {
+            for (e in data) {
+              id = e['contentId'];
+              ydc2URL = ydc2Prefix + id + ydc2Suffix;
+              output = ydc2URL;
+              break;
+            }
+          });
+          if (output != '')
+            break;
+        }
+        if (output == '')
+          return doc.resourceURL[0];
+        return output;
+      }
+
       var addImage = function (docs, i) {
+        var urlTry = getURL(docs[i]);
         var request = $.ajax({
-          url: docs[i].resourceURL[0],
+          url: urlTry,
           type: 'HEAD',
           //async: false,
           complete: function (req) {
             if (req.status != 404) 
-              validImages.push(docs[i]);
+              validImages.push(urlTry);
           }
         });
         promises.push( request.then(function (x) {
@@ -135,24 +165,25 @@ jQuery(document).ready(function ($) {
           return (new $.Deferred).resolve({result:x,resolved:false});
         })
         );
-      }
+      }   
+      
       for(var i = 0; i < docs.length; i++){    
         addImage(docs, i);
-      }               
+      }      
 
       $.when.apply(null, promises).done(function () {
-      var validNum = validImages.length; // docs.length; // 
-      var chars = 'abcd';
-      for (var c in chars.split('')) {
-        for (var i = 0; i <= 5; i++) {
-          var rand = Math.round(Math.random() * validNum);
-              var url = validImages[rand].resourceURL[0]; // docs[rand].resourceURL[0]; // 
-              console.log(this.target+chars[c] + " " + '#'+chars[c]+i);
-              $(this.target+''+chars[c]).html($('#'+chars[c]+i).attr('src', url));
-            }                    
-          }
-          initSlider();
-        });
+        var validNum = validImages.length;
+        var chars = 'abcd';
+        for (var c in chars.split('')) {
+          for (var i = 0; i <= 5; i++) {
+            var rand = Math.round(Math.random() * validNum);
+            var url = validImages[rand];
+            console.log(this.target+chars[c] + " " + '#'+chars[c]+i);
+            $(this.target+''+chars[c]).html($('#'+chars[c]+i).attr('src', url));
+          }                    
+        }
+        initSlider();
+      });
     }
   });
 
@@ -161,7 +192,6 @@ Manager = new AjaxSolr.Manager({
 });
 
 Manager.setStore(new AjaxSolr.ParameterStore());
-
 
 Manager.addWidget(new AjaxSolr.ResultWidget({
   id: 'slider',
