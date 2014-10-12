@@ -42,14 +42,14 @@ for (var e in params)
   Manager.store.addByValue(e, params[e]);
 ```
 
-Finer details about what parameters exist and how to constuct queries can be gleaned from the [https://wiki.apache.org/solr/SolrQuerySyntax](Apache Solr docs).
+Finer details about what parameters exist and how to constuct queries can be gleaned from the [Apache Solr docs](https://wiki.apache.org/solr/SolrQuerySyntax).
 
 And to execute a request:
 
 ```javascript
 Manager.doRequest();
 ```
-The metadata result can be accessed via `Manager.response.response.docs`, which returns an array of docs that contain metadata field:value pairs. Because the YDC2 database is heterogeneous, i.e. docs can contain different metadata fields, it would be useful to look at the docs of the sorts of queries that would be used in a browser developer console or similar. For a list of all fields that occur in the database, refer to it's [http://hackathonlb-1601934162.us-east-1.elb.amazonaws.com/solr/biblio/admin/file/?file=schema.xml](schema XML).
+The metadata result can be accessed via `Manager.response.response.docs`, which returns an array of docs that contain metadata field:value pairs. Because the YDC2 database is heterogeneous, i.e. docs can contain different metadata fields, it would be useful to look at the docs of the sorts of queries that would be used in a browser developer console or similar. For a list of all fields that occur in the database, refer to it's [schema XML](http://hackathonlb-1601934162.us-east-1.elb.amazonaws.com/solr/biblio/admin/file/?file=schema.xml).
 
 ### Modifying the DOM
 To this Manager, we can add Widgets objects (extend `AjaxSolr.AbstractWidget`), which can dynamically modify the DOM when the Manager makes a request. Custom widgets can be used by overriding the Abstract widget and adding it to the Manager:
@@ -77,15 +77,15 @@ Manager.addWidget(new AjaxSolr.CustomWidgetName({
   // ...
 }));
 
-// Alternatively, can directly add anonymous AjaxSolr.AbstractWidget instance)
+// Alternatively, can directly add anonymous AjaxSolr.AbstractWidget instance
 ```
 
-Custom widgets will most likely have their own `afterReqest` implementation, and probably own `beforeRequest` and `init`. Widgets can access the Manager with `this.manager` to read query responses (from the array `this.manager.response.response.docs`), execute their own requests (by calling this.manager.store.* and this.manager.doRequest()), etc. The YDC2 Solr library provides several ready-made widgets.
+Custom widgets will most likely have their own `afterReqest` implementation, and probably own `beforeRequest` and `init`. Widgets can access the Manager with `this.manager` to read query responses (from the array `this.manager.response.response.docs`), execute their own requests (by calling `this.manager.store.*` and `this.manager.doRequest()`), etc. The YDC2 Solr library provides several ready-made widgets.
 
 ### Accessing Images
-The metadata results should be easy enough to use from `Manager.response.response.docs`. Finding and using images is more complicated, again due to the database's heterogenous nature (not all entries link to images, and some who do provide invalid/dead links). 
+The metadata results should be easy enough to use from `Manager.response.response.docs`. Finding and using images is more complicated, again due to the database's heterogenous nature (not all entries link to images, and some who do are providing invalid/dead links). 
 
-There are two methods to checking and using images that the database references: checking the resource-related fields, or checking cds_* fields. The first covers more potential images, but has more false positives, i.e. not all that have resources will actually have images for use; while the second is more reliable at finding images that can be accessed and manipulated, but has more false negatives, i.e. some images in the database will be missed. On balance the latter is probably easier to work with, but both are described below.
+There are two methods to checking and using images that the database references: checking the `resource`-related fields, or checking `cds_*` fields. The first covers more potential images, but has more false positives, i.e. not all that have resources will actually have images for use; while the second is more reliable at finding images that can be accessed and manipulated, but has more false negatives, i.e. some images in the database will be missed. On balance the latter is probably easier to work with, but both are described below.
 
 Regardless of the method, it would be prudent to send a HEAD request to check if their urls will work. Something like the following code would work:
 
@@ -116,7 +116,7 @@ for(var i = 0; i < docs.length; i++){
 }
 
 $.when.apply(null, promises).done(function () {
-  // Do whatever on validImages...
+  // Do whatever with validImages urls...
 });
 // 
 ```
