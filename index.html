@@ -3,11 +3,15 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
   <title>AJAX Solr</title>
+  
   <link rel="stylesheet" href="css/ydc2.css">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
+  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+  
   <script src="ajax-solr/core/Core.js"></script>
   <script src="ajax-solr/core/AbstractManager.js"></script>
   <script src="ajax-solr/managers/Manager.jquery.js"></script>
@@ -17,15 +21,18 @@
   <script src="ajax-solr/widgets/jquery/PagerWidget.js"></script>
   <script src="ajax-solr/core/AbstractFacetWidget.js"></script>
   <script src="ajax-solr/core/AbstractTextWidget.js"></script>
+  
   <script src="js/ydc2-search.js"></script>
 </head>
 <body>
   <div id="wrap">
+    <!-- Header -->
     <div id="header">
       <h1>YDC2 - AJAX Solr Demos</h1>
       <h2>YDC2 metadata search</h2>
     </div>
-
+    
+    <!-- Right Pane: Search Results & Navigation -->
     <div class="right">
       <div id="result">
         <div id="navigation">
@@ -36,6 +43,7 @@
       </div>
     </div>
 
+    <!-- Left Pane: Search Box & Facet Links -->
     <div class="left">
       <h2>Current Selection</h2>
       <ul id="selection"></ul>
@@ -68,6 +76,7 @@
       <div class="tagcloud" id="era_facet"></div>
 
       <div class="clear"></div>
+      
     </div>
     <div class="clear"></div>
   </div>
