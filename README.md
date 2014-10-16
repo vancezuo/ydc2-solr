@@ -6,7 +6,7 @@ This is a simple javascript demo of accessing Yale Digital Collections Center me
 Dependencies
 ----
 
-The necessary files from the two libraries used to create these demos, AJAX Solr and the Jssor JQuery slider, are included in this repo for convenience. Details brlow.
+The necessary files from the two libraries used to create these demos, AJAX Solr and the Jssor JQuery slider, are included in this repo for convenience. Details below.
 
 * AJAX Solr (https://github.com/evolvingweb/ajax-solr) 
   * In folder named "ajax-solr".
@@ -14,7 +14,12 @@ The necessary files from the two libraries used to create these demos, AJAX Solr
 * Jssor JQuery slider (https://github.com/jssor/jquery-slider)
   * In folder named "jssor".
   * Release under MIT License.
-  
+
+Ideas
+----
+
+The YDC2 database provides a large number of images and metadata for use. Possible applications include creating graphic visualization of artists/authors, interactive virtual museums, educational games, visual enhancments of artwork (e.g. reverse aging effects), or collages of certain features across works (e.g. faces).
+
 Usage
 ----
 To see the demos, simply download the repo and open one of the html files. The apps get their data from the YDC2 Solr database can be manually queried through http://hackathonlb-1601934162.us-east-1.elb.amazonaws.com/solr. Below are some notes for integrating this data in an own app.
@@ -49,7 +54,7 @@ And to execute a request:
 ```javascript
 Manager.doRequest();
 ```
-The metadata result can be accessed via `Manager.response.response.docs`, which returns an array of docs that contain metadata field:value pairs. Because the YDC2 database is heterogeneous, i.e. docs can contain different metadata fields, it would be useful to look at the docs of the sorts of queries that would be used in a browser developer console or similar. For a list of all fields that occur in the database, refer to it's [schema XML](http://hackathonlb-1601934162.us-east-1.elb.amazonaws.com/solr/biblio/admin/file/?file=schema.xml).
+The metadata result can be accessed via `Manager.response.response.docs`, which returns an array of docs that contain metadata field:value pairs. Because the YDC2 database is heterogeneous, i.e. docs can contain different metadata fields, it would be useful to look at the docs for the types of queries that would be passed in an app, using a browser developer console or similar. For a list of all fields that occur in the database, refer to it's [schema XML](http://hackathonlb-1601934162.us-east-1.elb.amazonaws.com/solr/biblio/admin/file/?file=schema.xml).
 
 ### Modifying the DOM
 To this Manager, we can add Widgets objects (extend `AjaxSolr.AbstractWidget`), which can dynamically modify the DOM when the Manager makes a request. Custom widgets can be used by overriding the Abstract widget and adding it to the Manager:
@@ -80,16 +85,18 @@ Manager.addWidget(new AjaxSolr.CustomWidgetName({
 // Alternatively, can directly add anonymous AjaxSolr.AbstractWidget instance
 ```
 
-Custom widgets will most likely have their own `afterReqest` implementation, and probably own `beforeRequest` and `init`. Widgets can access the Manager with `this.manager` to read query responses (from the array `this.manager.response.response.docs`), execute their own requests (by calling `this.manager.store.*` and `this.manager.doRequest()`), etc. The YDC2 Solr library provides several ready-made widgets.
+Custom widgets will most likely have their own `afterReqest` implementation, and probably own `beforeRequest` and `init`. Widgets can access the Manager with `this.manager` to read query responses (from the array `this.manager.response.response.docs`), execute their own requests (by calling `this.manager.store.*` and `this.manager.doRequest()`), etc. The AJAX Solr library provides several ready-made widgets.
 
 ### Accessing Images
 The metadata results should be easy enough to use from `Manager.response.response.docs`. Finding and using images is more complicated, again due to the database's heterogenous nature (not all entries link to images, and some who do are providing invalid/dead links). 
 
-There are two methods to checking and using images that the database references: checking the `resource`-related fields, or checking `cds_*` fields. The first covers more potential images, but has more false positives, i.e. not all that have resources will actually have images for use; while the second is more reliable at finding images that can be accessed and manipulated, but has more false negatives, i.e. some images in the database will be missed. On balance the latter is probably easier to work with, but both are described below.
+There are two methods to checking and using images that the database references: checking the `resource`-related fields, or checking `cds_*` fields. The first covers more potential images, but has more false positives, i.e. not all that have resources will actually have working image links; while the second is more reliable at finding images that can be accessed and manipulated, but has more false negatives, i.e. some images in the database will be missed. On balance the latter is probably easier to work with, but both are described below.
 
-Regardless of the method, it would be prudent to send a HEAD request to check if their urls will work. Something like the following code would work:
+Regardless of the method, it would be prudent to send a HEAD request to check if their url values are valid. Something like the following code would work (it sends asynchronous HEAD requests for all entries in a request, adding the valid URLs to a validImages url list):
 
 ```javascript
+// Assumes we are in a widget class definition
+// For outside of class body, use Manager (or whatever the Manager object name is instead of this.manager
 var docs = this.manager.response.response.docs;
            
 promises = [];
@@ -122,7 +129,7 @@ $.when.apply(null, promises).done(function () {
 ```
 
 #### Using Resource Fields
-Generally, database entries that have corresponding images will have a `resource` field with value "Resource available online" value. This should be checked for, or the string `resource:"Resource available online"` should be added to the query. Another field that may be of interest is the `thumbnail` field (which will be a url of small image if it exists).
+Generally, database entries that have corresponding images will have a `resource` field with value "Resource available online" value. This should be checked for explicitly, or the string `resource:"Resource available online"` should be added to the query. Another field that may be of interest is the `thumbnail` field (which will be a url of small image, if it exists).
 
 Of these entries that have "Resource available online", some of them can have their images accessed by simply using the `resourceURL[0]` value of the response docs array. The links in this field encpass those that could be obtained by the CDS fields method, and more--but many of them do not work. Given that checking all of them via AJAX requests will be relatively slow, this method is probably best used only if the queries that are being worked on are known to mostly yield valid images.
 
@@ -145,7 +152,7 @@ where XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX is the `contentId` value of the eleme
 http://scale.ydc2.yale.edu/iiif/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/pct:0,33,100,100/pct:50/270/native.jpg
 ```
 
-With the right checks (i.e. making sure the `cds_repository_code` and `cds_object_id` exist), this method finds manipulatable images fairly well. However, it will miss entries in the database that lack thsese fields but otherwise have valid image resources.
+With the right checks (i.e. making sure the `cds_repository_code` and `cds_object_id` exist), this method finds manipulatable images fairly well. However, it will miss entries in the database that lack these fields but otherwise have valid image resources.
 
 Some example code for this method:
 
