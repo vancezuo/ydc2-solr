@@ -2,128 +2,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/jssor.css">
-    <title>AJAX Solr - Grid Slider</title>
-    <script type="text/javascript" src="jssor/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="jssor/js/jssor.core.js"></script>
-    <script type="text/javascript" src="jssor/js/jssor.utils.js"></script>
-    <script type="text/javascript" src="jssor/js/jssor.slider.js"></script>
-    <script src="ajax-solr/core/Core.js"></script>
-    <script src="ajax-solr/core/AbstractManager.js"></script>
-    <script src="ajax-solr/managers/Manager.jquery.js"></script>
-    <script src="ajax-solr/core/Parameter.js"></script>
-    <script src="ajax-solr/core/ParameterStore.js"></script>    
-    <script src="ajax-solr/core/AbstractWidget.js"></script> 
-    <script src="js/ydc2-grid.js"></script>  
-    <!-- Jssor Slider Begin -->
-    <!-- You can move inline styles to css file or css block. -->
-    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 809px; height: 456px; overflow: hidden; ">
-            <!-- Slides Container -->
-            <div u="slides" id="slide" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 456px;
-                overflow: hidden;">
-                <div>
-                    <div id="sliderh1_container" style="position: relative; top: 0px; left: 0px; width: 809px;
-                        height: 150px;">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+    
+  <title>AJAX Solr - Grid Slider</title>
+    
+  <link rel="stylesheet" href="css/jssor.css">
+    
+  <script type="text/javascript" src="jssor/js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="jssor/js/jssor.core.js"></script>
+  <script type="text/javascript" src="jssor/js/jssor.utils.js"></script>
+  <script type="text/javascript" src="jssor/js/jssor.slider.js"></script>
+    
+  <script src="ajax-solr/core/Core.js"></script>
+  <script src="ajax-solr/core/AbstractManager.js"></script>
+  <script src="ajax-solr/managers/Manager.jquery.js"></script>
+  <script src="ajax-solr/core/Parameter.js"></script>
+  <script src="ajax-solr/core/ParameterStore.js"></script>    
+  <script src="ajax-solr/core/AbstractWidget.js"></script> 
+  
+  <script src="js/ydc2-grid.js"></script>  
+  
+  <!-- Jssor Slider Begin -->
+  <!-- You can move inline styles to css file or css block. -->
+  <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 809px; height: 456px; overflow: hidden; ">
+    <!-- Slides Container -->
+    <div u="slides" id="slide" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 456px; overflow: hidden;">
+      <div>
+        <div id="sliderh1_container" style="position: relative; top: 0px; left: 0px; width: 809px; height: 150px;">
 
-                        <!-- Slides Container -->
-                        <div u="slides" id="slidea" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px;
-                            overflow: hidden;">
-                            <div><img u="image" id="a0" src="" /></div>
-                            <div><img u="image" id="a1" src="" /></div>
-                            <div><img u="image" id="a2" src="" /></div>
-                            <div><img u="image" id="a3" src="" /></div>
-                            <div><img u="image" id="a4" src="" /></div>
-                            <div><img u="image" id="a5" src="" /></div>
-                        </div>
-                        <!-- Bullet Navigator Skin Begin -->
-                        <!-- bullet navigator container -->
-                        <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
-                            <!-- bullet navigator item prototype -->
-                            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
-                        </div>
-                        <!-- Bullet Navigator Skin End -->
-                    </div>
-                </div>
-                <div>
-                    <div id="sliderh2_container" style="position: relative; top: 0px; left: 0px; width: 809px;
-                        height: 150px;">
-
-                        <!-- Slides Container -->
-                        <div u="slides" id="slideb" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px;
-                            overflow: hidden;">
-                            <div><img u="image" id="b0" src="" /></div>
-                            <div><img u="image" id="b1" src="" /></div>
-                            <div><img u="image" id="b2" src="" /></div>
-                            <div><img u="image" id="b3" src="" /></div>
-                            <div><img u="image" id="b4" src="" /></div>
-                            <div><img u="image" id="b5" src="" /></div>
-                        </div>
-                        <!-- Bullet Navigator Skin Begin -->
-                        <!-- bullet navigator container -->
-                        <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
-                            <!-- bullet navigator item prototype -->
-                            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
-                        </div>
-                        <!-- Bullet Navigator Skin End -->
-                    </div>
-                </div>
-                <div>
-                    <div id="sliderh3_container" style="position: relative; top: 0px; left: 0px; width: 809px;
-                        height: 150px;">
-
-                        <!-- Slides Container -->
-                        <div u="slides" id="slidec" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px;
-                            overflow: hidden;">
-                            <div><img u="image" id="c0" src="" /></div>
-                            <div><img u="image" id="c1" src="" /></div>
-                            <div><img u="image" id="c2" src="" /></div>
-                            <div><img u="image" id="c3" src="" /></div>
-                            <div><img u="image" id="c4" src="" /></div>
-                            <div><img u="image" id="c5" src="" /></div>
-                        </div>
-                        <!-- Bullet Navigator Skin Begin -->
-                        <!-- bullet navigator container -->
-                        <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
-                            <!-- bullet navigator item prototype -->
-                            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
-                        </div>
-                        <!-- Bullet Navigator Skin End -->
-                    </div>
-                </div>
-                <div>
-                    <div id="sliderh4_container" style="position: relative; top: 0px; left: 0px; width: 809px;
-                        height: 150px;">
-
-                        <!-- Slides Container -->
-                        <div u="slides" id="slided" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px;
-                            overflow: hidden;">
-                            <div><img u="image" id="d0" src="" /></div>
-                            <div><img u="image" id="d1" src="" /></div>
-                            <div><img u="image" id="d2" src="" /></div>
-                            <div><img u="image" id="d3" src="" /></div>
-                            <div><img u="image" id="d4" src="" /></div>
-                            <div><img u="image" id="d5" src="" /></div>
-                        </div>
-                        <!-- Bullet Navigator Skin Begin -->
-                        <!-- bullet navigator container -->
-                        <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
-                            <!-- bullet navigator item prototype -->
-                            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
-                        </div>
-                        <!-- Bullet Navigator Skin End -->
-                    </div>
-                </div>
-            </div>
-        <!-- bullet navigator container -->
-        <div u="navigator" class="jssorb02" style="position: absolute; bottom: 8px; left: 6px;">
+          <!-- Slides Container -->
+          <div u="slides" id="slidea" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px; overflow: hidden;">
+            <div><img u="image" id="a0" src="" /></div>
+            <div><img u="image" id="a1" src="" /></div>
+            <div><img u="image" id="a2" src="" /></div>
+            <div><img u="image" id="a3" src="" /></div>
+            <div><img u="image" id="a4" src="" /></div>
+            <div><img u="image" id="a5" src="" /></div>
+          </div>
+          <!-- Bullet Navigator Skin Begin -->
+          <!-- bullet navigator container -->
+          <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
             <!-- bullet navigator item prototype -->
-            <div u="prototype" style="POSITION: absolute; WIDTH: 21px; HEIGHT: 21px; text-align:center; line-height:21px; color:White; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+          </div>
+          <!-- Bullet Navigator Skin End -->
         </div>
-        <!-- Bullet Navigator Skin End -->
-            <a style="display: none" href="http://www.jssor.com">responsive carousel</a>
+      </div>
+      <div>
+        <div id="sliderh2_container" style="position: relative; top: 0px; left: 0px; width: 809px; height: 150px;">
+
+          <!-- Slides Container -->
+          <div u="slides" id="slideb" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px; overflow: hidden;">
+            <div><img u="image" id="b0" src="" /></div>
+            <div><img u="image" id="b1" src="" /></div>
+            <div><img u="image" id="b2" src="" /></div>
+            <div><img u="image" id="b3" src="" /></div>
+            <div><img u="image" id="b4" src="" /></div>
+            <div><img u="image" id="b5" src="" /></div>
+          </div>
+          <!-- Bullet Navigator Skin Begin -->
+          <!-- bullet navigator container -->
+          <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+          </div>
+          <!-- Bullet Navigator Skin End -->
         </div>
-    <!-- Jssor Slider End -->
+      </div>
+      <div>
+        <div id="sliderh3_container" style="position: relative; top: 0px; left: 0px; width: 809px; height: 150px;">
+
+          <!-- Slides Container -->
+          <div u="slides" id="slidec" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px; overflow: hidden;">
+            <div><img u="image" id="c0" src="" /></div>
+            <div><img u="image" id="c1" src="" /></div>
+            <div><img u="image" id="c2" src="" /></div>
+            <div><img u="image" id="c3" src="" /></div>
+            <div><img u="image" id="c4" src="" /></div>
+            <div><img u="image" id="c5" src="" /></div>
+          </div>
+          <!-- Bullet Navigator Skin Begin -->
+          <!-- bullet navigator container -->
+          <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
+              <!-- bullet navigator item prototype -->
+              <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+          </div>
+          <!-- Bullet Navigator Skin End -->
+        </div>
+      </div>
+      <div>
+        <div id="sliderh4_container" style="position: relative; top: 0px; left: 0px; width: 809px; height: 150px;">
+
+          <!-- Slides Container -->
+          <div u="slides" id="slided" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 809px; height: 150px; overflow: hidden;">
+            <div><img u="image" id="d0" src="" /></div>
+            <div><img u="image" id="d1" src="" /></div>
+            <div><img u="image" id="d2" src="" /></div>
+            <div><img u="image" id="d3" src="" /></div>
+            <div><img u="image" id="d4" src="" /></div>
+            <div><img u="image" id="d5" src="" /></div>
+          </div>
+          <!-- Bullet Navigator Skin Begin -->
+          <!-- bullet navigator container -->
+          <div u="navigator" class="jssorb03" style="position: absolute; bottom: 10px; right: 10px;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+          </div>
+          <!-- Bullet Navigator Skin End -->
+        </div>
+      </div>
+    </div>
+      <!-- bullet navigator container -->
+      <div u="navigator" class="jssorb02" style="position: absolute; bottom: 8px; left: 6px;">
+          <!-- bullet navigator item prototype -->
+          <div u="prototype" style="POSITION: absolute; WIDTH: 21px; HEIGHT: 21px; text-align:center; line-height:21px; color:White; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+      </div>
+      <!-- Bullet Navigator Skin End -->
+    <a style="display: none" href="http://www.jssor.com">responsive carousel</a>
+  </div>
+  <!-- Jssor Slider End -->
 </body>
 </html>
